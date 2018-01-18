@@ -17,15 +17,17 @@ const countLetters = function (string) {
   // index through string
   for (let i = 0; i < stringNoSpace.length; i++) {
 
+    // refactored to save stringNoSpace[i] -
+    var char = stringNoSpace[i];
+
     // check if key already exists
-    if (letterCount[stringNoSpace[i]] === undefined) {
-      letterCount[stringNoSpace[i]] = [];
+    if (letterCount[char] === undefined) {
+      letterCount[char] = [];
     }
 
     // create key-value pairs for each letter
-    letterCount[stringNoSpace[i]].push(i);
+    letterCount[char].push(i);
   }
-
 
   // return instances of chars in passed string in object
   return letterCount;
@@ -35,6 +37,7 @@ const countLetters = function (string) {
 
 
 console.log(countLetters("Lighthouse in"));
+// console.log(countLetters("Lighthouse in the house"));
 console.log({
   l: [0],
   i: [1,10],
